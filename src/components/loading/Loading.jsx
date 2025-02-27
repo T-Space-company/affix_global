@@ -32,6 +32,7 @@ const LoaderOverlay = styled.div`
 `
 
 const Loader = styled.div`
+  overflow: hidden;
   transform: rotateZ(45deg);
   perspective: 1000px;
   border-radius: 50%;
