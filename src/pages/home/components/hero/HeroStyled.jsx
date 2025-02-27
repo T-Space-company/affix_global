@@ -100,26 +100,24 @@ export const HeroButton = styled.button`
   line-height: 130%;
   letter-spacing: 0.08px;
   border-radius: 20px;
-  background: #2b75dc;
+  background: linear-gradient(135deg, #0044cc, #007bff);
   padding: 14px 29px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: #fff;
-    color: #2b75dc;
-    box-shadow: 0px 4px 15px rgba(64, 152, 255, 0.5);
+    color: #0044cc;
+
+    box-shadow: 0px 4px 15px rgba(0, 68, 204, 0.5);
+    transition: all 0.5s ease-in-out;
   }
 
   &:active {
     transform: scale(0.96);
-  }
-
-  &:focus {
-    background: #fff;
-    color: #2b75dc;
-    box-shadow: 0px 4px 15px rgba(64, 152, 255, 0.5);
+    transition: transform 0.2s ease-in-out;
   }
 
   @media (min-width: 1280px) {

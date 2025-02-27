@@ -56,16 +56,15 @@ export const PartnerProgramText = styled.p`
 `
 
 export const PartnerProgramButton = styled.button`
-  color: #1b1b1c;
+  color: #fff;
   text-align: center;
-
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 130%; /* 20.8px */
+  line-height: 130%;
   letter-spacing: 0.08px;
   border-radius: 100px;
-  background: #fff;
+  background: linear-gradient(135deg, #0044cc, #007bff);
   display: flex;
   height: 48px;
   padding: 10px 30px;
@@ -74,20 +73,20 @@ export const PartnerProgramButton = styled.button`
   align-self: stretch;
   max-width: 250px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out; /* Подовжив час анімації */
   border: none;
-  &:hover {
-    background: linear-gradient(135deg, #0044cc, #007bff);
-    color: #fff;
-    box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.5);
+
+  &:hover,
+  &:focus {
+    background: #fff;
+    color: #0044cc;
+
+    box-shadow: 0px 4px 15px rgba(0, 68, 204, 0.5);
+    transition: all 0.5s ease-in-out;
   }
 
   &:active {
     transform: scale(0.96);
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0px 0px 8px 2px rgba(0, 123, 255, 0.7);
+    transition: transform 0.2s ease-in-out;
   }
 `
