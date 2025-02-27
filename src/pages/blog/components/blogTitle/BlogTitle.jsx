@@ -1,5 +1,4 @@
 import React from 'react'
-import { ContainerPading } from '../../../../styles/GlobalStyles'
 import {
   BlogTitleWrapper,
   BlogTitleContainer,
