@@ -14,15 +14,11 @@ const DesktopHeader = () => {
     <DesktopHeaderWrapp className="desktop">
       <Logo />
       <DesktopHeaderNaw>
-        <DesktopHeaderLink to="/affix_global/">Про нас</DesktopHeaderLink>
-        <DesktopHeaderLink to="/affix_global/advantages">
-          Преимущества
-        </DesktopHeaderLink>
-        <DesktopHeaderLink to="/affix_global/blog">Блог</DesktopHeaderLink>
-        <DesktopHeaderLink to="/affix_global/contact">
-          Контакты
-        </DesktopHeaderLink>
-        <DesktopHeaderLink to="/affix_global/contact">FAQ</DesktopHeaderLink>
+        <DesktopHeaderLink to="/">Про нас</DesktopHeaderLink>
+        <DesktopHeaderLink to="/advantages">Преимущества</DesktopHeaderLink>
+        <DesktopHeaderLink to="/blog">Блог</DesktopHeaderLink>
+        <DesktopHeaderLink to="/contact">Контакты</DesktopHeaderLink>
+        <DesktopHeaderLink to="/contact">FAQ</DesktopHeaderLink>
       </DesktopHeaderNaw>
       <DesktopHeaderButton onClick={redirectToContact}>
         Подать заявку сейчас

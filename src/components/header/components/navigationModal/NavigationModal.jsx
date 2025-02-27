@@ -68,19 +68,16 @@ const NavigationModal = ({ isOpen, toggleModal }) => {
           >
             <ModalContent>
               <NavLinks>
-                <NavLinkItem to="/affix_global/" onClick={toggleModal}>
+                <NavLinkItem to="/" onClick={toggleModal}>
                   Про нас
                 </NavLinkItem>
-                <NavLinkItem
-                  to="/affix_global/advantages"
-                  onClick={toggleModal}
-                >
+                <NavLinkItem to="/advantages" onClick={toggleModal}>
                   Преимущества
                 </NavLinkItem>
-                <NavLinkItem to="/affix_global/contact" onClick={toggleModal}>
+                <NavLinkItem to="/contact" onClick={toggleModal}>
                   Контакты
                 </NavLinkItem>
-                <NavLinkItem to="/affix_global/blog" onClick={toggleModal}>
+                <NavLinkItem to="/blog" onClick={toggleModal}>
                   Блог
                 </NavLinkItem>
                 <NavLinkItem to="/contact" onClick={toggleModal}>
