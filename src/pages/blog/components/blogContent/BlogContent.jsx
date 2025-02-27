@@ -8,6 +8,7 @@ export const BlogList = styled.ul`
   gap: 20px;
   padding: 0;
   list-style: none;
+  overflow: hidden;
 `
 
 export const BlogTitleWrapp = styled.div`
