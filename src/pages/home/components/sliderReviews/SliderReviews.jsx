@@ -246,7 +246,7 @@ const SliderReviews = () => {
       },
     ],
   }
-
+  const [videoLoaded, setVideoLoaded] = useState(false)
   return (
     <SliderWrapper>
       <h2>Что о нас говорят наши партнеры?</h2>
@@ -260,7 +260,9 @@ const SliderReviews = () => {
         {reviews.map((review, index) => (
           <ReviewCardWrapper key={index}>
             <ReviewCard>
-              <VideoWrapper>
+              <VideoWrapper
+                style={{ background: videoLoaded ? 'transparent' : '#222' }}
+              >
                 <video
                   src={review.video}
                   controls
@@ -269,6 +271,7 @@ const SliderReviews = () => {
                   style={{ objectFit: 'cover' }}
                   onContextMenu={(e) => e.preventDefault()}
                   playsInline
+                  preload="metadata"
                 />
               </VideoWrapper>
               <Name>{review.name}</Name>
