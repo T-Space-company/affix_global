@@ -135,31 +135,42 @@ import Video3 from '../../../../assets/videos/reviews/3_video.mp4'
 import Video4 from '../../../../assets/videos/reviews/4_video.mp4'
 import Video5 from '../../../../assets/videos/reviews/5_video.mp4'
 
+import Img1 from '../../../../assets/images/BlogImg.png'
+import Img2 from '../../../../assets/images/BlogImg.png'
+import Img3 from '../../../../assets/images/BlogImg.png'
+import Img4 from '../../../../assets/images/BlogImg.png'
+import Img5 from '../../../../assets/images/BlogImg.png'
+
 const reviews = [
   {
     name: 'Алексей Бугров',
     position: 'IT-директор в компании ITL Team',
     video: Video1,
+    image: Img1,
   },
   {
     name: 'Марина Лисенко',
     position: 'CEO в Digital Agency',
     video: Video2,
+    image: Img2,
   },
   {
     name: 'Іван Петров',
     position: 'CMO в Startup Hub',
     video: Video3,
+    image: Img3,
   },
   {
     name: 'Анастасия Филипова',
     position: 'Head of Sales в FinTech',
     video: Video4,
+    image: Img4,
   },
   {
     name: 'Дмитрий Завадов',
     position: 'IT-директор в компании ITL Team',
     video: Video5,
+    image: Img5,
   },
 ]
 
@@ -272,6 +283,7 @@ const SliderReviews = () => {
                   onContextMenu={(e) => e.preventDefault()}
                   playsInline
                   preload="metadata"
+                  poster={review.image}
                 />
               </VideoWrapper>
               <Name>{review.name}</Name>
