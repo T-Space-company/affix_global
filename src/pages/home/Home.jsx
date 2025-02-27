@@ -1,14 +1,17 @@
 import AboutProject from './components/aboutProject/AboutProject'
 import AboutUnique from './components/aboutUnique/AboutUnique'
-import BlogSlider from './components/blogSlider/blogSlider'
+
 import FAQ from './components/fAQ/FAQ'
 import Hero from './components/hero/Hero'
 import PartnerProgram from './components/partnerProgram/PartnerProgram'
-import SliderReviews from './components/sliderReviews/sliderReviews'
+
 import TargetAudience from './components/targetAudience/TargetAudience'
 import CoreValues from './components/сoreValues/CoreValues'
 import FadeInSection from './HomeAnimation'
 import { HomeWrapper } from './HomeStyled'
+
+import BlogSlider from './components/blogSlider/BlogSlider'
+import SliderReviews from './components/sliderReviews/SliderReviews'
 
 const Home = () => {
   return (
