@@ -38,7 +38,8 @@ const ReviewCard = styled.div`
 
 const VideoWrapper = styled.div`
   width: 100%;
-
+  width: 240px;
+  height: 240px;
   background: #222;
   border-radius: 10px;
   overflow: hidden;
@@ -80,6 +81,9 @@ const ProgressBar = styled.div`
   align-items: center;
   gap: 4px;
   margin-bottom: 8px;
+`
+const SliderTitle = styled.h2`
+  margin-bottom: 20px;
 `
 
 const ProgressItem = styled.div`
@@ -135,11 +139,11 @@ import Video3 from '../../../../assets/videos/reviews/3_video.mp4'
 import Video4 from '../../../../assets/videos/reviews/4_video.mp4'
 import Video5 from '../../../../assets/videos/reviews/5_video.mp4'
 
-import Img1 from '../../../../assets/images/BlogImg.png'
-import Img2 from '../../../../assets/images/BlogImg.png'
-import Img3 from '../../../../assets/images/BlogImg.png'
-import Img4 from '../../../../assets/images/BlogImg.png'
-import Img5 from '../../../../assets/images/BlogImg.png'
+import Img1 from '../../../../assets/images/prev/pre1.png'
+import Img2 from '../../../../assets/images/prev/pre2.png'
+import Img3 from '../../../../assets/images/prev/pre3.png'
+import Img4 from '../../../../assets/images/prev/pre4.png'
+import Img5 from '../../../../assets/images/prev/pre5.png'
 
 const reviews = [
   {
@@ -260,7 +264,7 @@ const SliderReviews = () => {
   const [videoLoaded, setVideoLoaded] = useState(false)
   return (
     <SliderWrapper>
-      <h2>Что о нас говорят наши партнеры?</h2>
+      <SliderTitle>Что о нас говорят наши партнеры?</SliderTitle>
       <ArrowButton className="prev" onClick={() => sliderRef.slickPrev()}>
         <img src={PrevSVG} alt="" />
       </ArrowButton>
