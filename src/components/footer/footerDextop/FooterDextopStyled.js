@@ -15,6 +15,12 @@ export const LogoWrapp = styled.div`
   width: 90px;
 `
 
+export const FooterContactWrapperStyleBtn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`
+
 export const FooterDextopTop = styled.div`
   display: flex;
   flex-direction: column;
@@ -93,4 +99,5 @@ export const FooterSubmitButton = styled.button`
 export const FooterContactWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  padding-right: 50px;
 `

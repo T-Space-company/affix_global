@@ -1,6 +1,7 @@
 import { useMediaQuery } from 'react-responsive'
 import {
   FooterContactButtonTelegram,
+  FooterContactButtonTelegramWhite,
   FooterContactButtonWhatsapp,
   FooterContactIcon,
   FooterContacts,
@@ -23,6 +24,9 @@ import {
   FooterSubmitButton,
 } from '../../components/footer/footerDextop/FooterDextopStyled'
 import useNavigateToContact from '../../hooks/useNavigateToContact'
+import TelegramWhiteIcon from '../../assets/icons/TelegramWhiteIcon'
+import WhatsappIcon from '../../assets/icons/WhatsappIcon'
+import TelegramIcon from '../../assets/icons/TelegramIcon'
 
 const Contact = () => {
   const redirectToContact = useNavigateToContact()
@@ -39,14 +43,52 @@ const Contact = () => {
           <ContactNavigate>
             <ContactTitleEmail>GLOBALAFFIX@mail.com</ContactTitleEmail>
             <FooterContacts>
-              <FooterContactButtonTelegram>
+              <FooterContactButtonTelegram
+                onMouseEnter={(e) =>
+                  e.currentTarget
+                    .querySelector('svg path')
+                    .setAttribute('fill', 'white')
+                }
+                onMouseLeave={(e) =>
+                  e.currentTarget
+                    .querySelector('svg path')
+                    .setAttribute('fill', '#039BE5')
+                }
+              >
                 <span>Перейти в наш Telegram Bot</span>
-                <FooterContactIcon src={SVGTELEGRAM} alt="Telegram" />
+                <TelegramIcon color="#039BE5" />
               </FooterContactButtonTelegram>
-              <FooterContactButtonWhatsapp>
+              <FooterContactButtonWhatsapp
+                onMouseEnter={(e) =>
+                  e.currentTarget
+                    .querySelector('svg path')
+                    .setAttribute('fill', 'white')
+                }
+                onMouseLeave={(e) =>
+                  e.currentTarget
+                    .querySelector('svg path')
+                    .setAttribute('fill', '#29A71A')
+                }
+              >
                 <span>Написать нам в Whatsapp</span>
-                <FooterContactIcon src={SVGWhatsapp} alt="Whatsapp" />
+                <WhatsappIcon color="#29A71A" />
               </FooterContactButtonWhatsapp>
+
+              <FooterContactButtonTelegramWhite
+                onMouseEnter={(e) =>
+                  e.currentTarget
+                    .querySelector('svg path')
+                    .setAttribute('fill', 'black')
+                }
+                onMouseLeave={(e) =>
+                  e.currentTarget
+                    .querySelector('svg path')
+                    .setAttribute('fill', 'white')
+                }
+              >
+                <span>Наша группа в телеграм</span>
+                <TelegramWhiteIcon color="white" />
+              </FooterContactButtonTelegramWhite>
             </FooterContacts>
 
             {isDesktop && (

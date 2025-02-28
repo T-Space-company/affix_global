@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import Logo from '../../header/components/logo/Logo'
 import {
   FooterContactButtonTelegram,
+  FooterContactButtonTelegramWhite,
   FooterContactButtonWhatsapp,
   FooterContactIcon,
   FooterCopyright,
@@ -21,11 +22,15 @@ import {
   FooterSubmitButton,
   FooterContactWrapper,
   LogoWrapp,
+  FooterContactWrapperStyleBtn,
 } from './FooterDextopStyled'
 
 import SVGTELEGRAM from '../../../assets/icons/svgTelegram.svg'
 import SVGWhatsapp from '../../../assets/icons/svgWhatsapp.svg'
 import useNavigateToContact from '../../../hooks/useNavigateToContact'
+import TelegramWhiteIcon from '../../../assets/icons/TelegramWhiteIcon'
+import WhatsappIcon from '../../../assets/icons/WhatsappIcon'
+import TelegramIcon from '../../../assets/icons/TelegramIcon'
 
 const FooterDextop = () => {
   const redirectToContact = useNavigateToContact()
@@ -43,10 +48,10 @@ const FooterDextop = () => {
         </LogoWrapp>
 
         <FooterLegalList>
-          <FooterLegalItem>Legal information Legal</FooterLegalItem>
+          <FooterLegalItem>Политика конфиденциальности</FooterLegalItem>
+          {/* <FooterLegalItem>information Legal information Legal</FooterLegalItem>
           <FooterLegalItem>information Legal information Legal</FooterLegalItem>
-          <FooterLegalItem>information Legal information Legal</FooterLegalItem>
-          <FooterLegalItem>information Legal information</FooterLegalItem>
+          <FooterLegalItem>information Legal information</FooterLegalItem> */}
         </FooterLegalList>
         <FooterCopyright>
           © 2025 Affix Global Все права защищены
@@ -73,14 +78,54 @@ const FooterDextop = () => {
 
         {!isContactPage && (
           <FooterContactWrapper>
-            <FooterContactButtonTelegram>
-              <span>Перейти в наш Telegram Bot</span>
-              <FooterContactIcon src={SVGTELEGRAM} alt="Telegram" />
-            </FooterContactButtonTelegram>
-            <FooterContactButtonWhatsapp>
-              <span>Написать нам в Whatsapp</span>
-              <FooterContactIcon src={SVGWhatsapp} alt="Whatsapp" />
-            </FooterContactButtonWhatsapp>
+            <FooterContactWrapperStyleBtn>
+              <FooterContactButtonTelegram
+                onMouseEnter={(e) =>
+                  e.currentTarget
+                    .querySelector('svg path')
+                    .setAttribute('fill', 'white')
+                }
+                onMouseLeave={(e) =>
+                  e.currentTarget
+                    .querySelector('svg path')
+                    .setAttribute('fill', '#039BE5')
+                }
+              >
+                <span>Перейти в наш Telegram Bot</span>
+                <TelegramIcon color="#039BE5" />
+              </FooterContactButtonTelegram>
+              <FooterContactButtonWhatsapp
+                onMouseEnter={(e) =>
+                  e.currentTarget
+                    .querySelector('svg path')
+                    .setAttribute('fill', 'white')
+                }
+                onMouseLeave={(e) =>
+                  e.currentTarget
+                    .querySelector('svg path')
+                    .setAttribute('fill', '#29A71A')
+                }
+              >
+                <span>Написать нам в Whatsapp</span>
+                <WhatsappIcon color="#29A71A" />
+              </FooterContactButtonWhatsapp>
+            </FooterContactWrapperStyleBtn>
+
+            <FooterContactButtonTelegramWhite
+              onMouseEnter={(e) =>
+                e.currentTarget
+                  .querySelector('svg path')
+                  .setAttribute('fill', 'black')
+              }
+              onMouseLeave={(e) =>
+                e.currentTarget
+                  .querySelector('svg path')
+                  .setAttribute('fill', 'white')
+              }
+            >
+              <span>Наша группа в телеграм</span>
+              <TelegramWhiteIcon color="white" />
+            </FooterContactButtonTelegramWhite>
           </FooterContactWrapper>
         )}
       </FooterDextopBottom>

@@ -91,6 +91,41 @@ export const FooterContactButtonTelegram = styled.button`
   }
 `
 
+export const FooterContactButtonTelegramWhite = styled.button`
+  cursor: pointer;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  border-radius: 100px;
+  display: flex;
+  height: 48px;
+  padding: 10px 20px;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0.07px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: #fff;
+    color: black;
+    box-shadow: 0px 4px 15px rgb(214 214 214 / 50%);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 8px 2px rgb(214 214 214 / 50%);
+  }
+`
+
 export const FooterContactButtonWhatsapp = styled.button`
   cursor: pointer;
   border: 1px solid #29a71a;

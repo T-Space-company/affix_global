@@ -11,29 +11,8 @@ import {
   FAQList,
 } from './FAQ.styles'
 import { ContainerPading } from '../../../../styles/GlobalStyles'
-
-const faqData = [
-  {
-    question: '?????????',
-    answer:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-  },
-  {
-    question: '?????????',
-    answer:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-  },
-  {
-    question: '?????????',
-    answer:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-  },
-  {
-    question: '?????????',
-    answer:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-  },
-]
+import { faqData } from './QetionFAQ'
+import ArrowSVG from '../../../../assets/icons/ArrowFAQ.svg'
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null)
@@ -54,7 +33,14 @@ const FAQ = () => {
                 onClick={() => toggleFAQ(index)}
               >
                 {item.question}
-                <ArrowIcon isOpen={openIndex === index}>▼</ArrowIcon>
+                <ArrowIcon isOpen={openIndex === index}>
+                  <motion.img
+                    src={ArrowSVG}
+                    alt="Arrow Icon"
+                    animate={{ rotate: openIndex === index ? 180 : 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  />
+                </ArrowIcon>
               </FAQQuestion>
               <motion.div
                 initial={{ height: 0, opacity: 0 }}
