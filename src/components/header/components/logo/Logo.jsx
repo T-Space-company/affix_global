@@ -5,7 +5,7 @@ import { LogoWrapp } from './LogoStyled'
 
 const Logo = () => {
   return (
-    <Link to="/affix_global/">
+    <Link to="/">
       <LogoWrapp>
         <img src={LogoTop} alt="GlobalAffiX Logo" />
         <img src={LogoBottom} alt="GlobalAffiX Logo" />
