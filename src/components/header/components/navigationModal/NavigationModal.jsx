@@ -83,6 +83,9 @@ const NavigationModal = ({ isOpen, toggleModal }) => {
                 <NavLinkItem to="/contact" onClick={toggleModal}>
                   FAQ
                 </NavLinkItem>
+                <NavLinkItem to="/quiz" onClick={toggleModal}>
+                  Quiz
+                </NavLinkItem>
               </NavLinks>
               <NavBtnWrapp>
                 <NavBtnTelegram>

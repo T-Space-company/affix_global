@@ -13,8 +13,7 @@ import {
 } from '../FooterStyled'
 
 import {
-  FooterDextopContainer,
-  FooterDextopTop,
+  FooterTabletTop,
   FooterDextopBottom,
   FooterNavList,
   FooterInputWrapper,
@@ -23,16 +22,17 @@ import {
   FooterContactWrapper,
   LogoWrapp,
   FooterContactWrapperStyleBtn,
-} from './FooterDextopStyled'
+  FooterTabletContainer,
+  TabletBtnWrapp,
+  FooterTabletBotWrapp,
+} from './FooterTabletStyled'
 
-import SVGTELEGRAM from '../../../assets/icons/svgTelegram.svg'
-import SVGWhatsapp from '../../../assets/icons/svgWhatsapp.svg'
 import useNavigateToContact from '../../../hooks/useNavigateToContact'
 import TelegramWhiteIcon from '../../../assets/icons/TelegramWhiteIcon'
 import WhatsappIcon from '../../../assets/icons/WhatsappIcon'
 import TelegramIcon from '../../../assets/icons/TelegramIcon'
 
-const FooterDextop = () => {
+const FooterTablet = () => {
   const redirectToContact = useNavigateToContact()
   const location = useLocation()
   console.log('====================================')
@@ -41,19 +41,12 @@ const FooterDextop = () => {
   const isContactPage = location.pathname === '/contact'
 
   return (
-    <FooterDextopContainer>
-      <FooterDextopTop>
+    <FooterTabletContainer>
+      <FooterTabletTop>
         <LogoWrapp>
           <Logo />
         </LogoWrapp>
-
-        <FooterLegalList>
-          <FooterLegalItem>Политика конфиденциальности</FooterLegalItem>
-        </FooterLegalList>
-        <FooterCopyright>
-          © 2025 Affix Global Все права защищены
-        </FooterCopyright>
-      </FooterDextopTop>
+      </FooterTabletTop>
 
       <FooterDextopBottom>
         <FooterNavList>
@@ -74,60 +67,70 @@ const FooterDextop = () => {
         )}
 
         {!isContactPage && (
-          <FooterContactWrapper>
-            <FooterContactWrapperStyleBtn>
-              <FooterContactButtonTelegram
-                onMouseEnter={(e) =>
-                  e.currentTarget
-                    .querySelector('svg path')
-                    .setAttribute('fill', 'white')
-                }
-                onMouseLeave={(e) =>
-                  e.currentTarget
-                    .querySelector('svg path')
-                    .setAttribute('fill', '#039BE5')
-                }
-              >
-                <span>Перейти в наш Telegram Bot</span>
-                <TelegramIcon color="#039BE5" />
-              </FooterContactButtonTelegram>
-              <FooterContactButtonWhatsapp
-                onMouseEnter={(e) =>
-                  e.currentTarget
-                    .querySelector('svg path')
-                    .setAttribute('fill', 'white')
-                }
-                onMouseLeave={(e) =>
-                  e.currentTarget
-                    .querySelector('svg path')
-                    .setAttribute('fill', '#29A71A')
-                }
-              >
-                <span>Написать нам в Whatsapp</span>
-                <WhatsappIcon color="#29A71A" />
-              </FooterContactButtonWhatsapp>
-            </FooterContactWrapperStyleBtn>
+          <TabletBtnWrapp>
+            <FooterContactWrapper>
+              <FooterContactWrapperStyleBtn>
+                <FooterContactButtonTelegram
+                  onMouseEnter={(e) =>
+                    e.currentTarget
+                      .querySelector('svg path')
+                      .setAttribute('fill', 'white')
+                  }
+                  onMouseLeave={(e) =>
+                    e.currentTarget
+                      .querySelector('svg path')
+                      .setAttribute('fill', '#039BE5')
+                  }
+                >
+                  <span>Перейти в наш Telegram Bot</span>
+                  <TelegramIcon color="#039BE5" />
+                </FooterContactButtonTelegram>
+              </FooterContactWrapperStyleBtn>
 
-            <FooterContactButtonTelegramWhite
+              <FooterContactButtonTelegramWhite
+                onMouseEnter={(e) =>
+                  e.currentTarget
+                    .querySelector('svg path')
+                    .setAttribute('fill', 'black')
+                }
+                onMouseLeave={(e) =>
+                  e.currentTarget
+                    .querySelector('svg path')
+                    .setAttribute('fill', 'white')
+                }
+              >
+                <span>Наша группа в телеграм</span>
+                <TelegramWhiteIcon color="white" />
+              </FooterContactButtonTelegramWhite>
+            </FooterContactWrapper>
+            <FooterContactButtonWhatsapp
               onMouseEnter={(e) =>
-                e.currentTarget
-                  .querySelector('svg path')
-                  .setAttribute('fill', 'black')
-              }
-              onMouseLeave={(e) =>
                 e.currentTarget
                   .querySelector('svg path')
                   .setAttribute('fill', 'white')
               }
+              onMouseLeave={(e) =>
+                e.currentTarget
+                  .querySelector('svg path')
+                  .setAttribute('fill', '#29A71A')
+              }
             >
-              <span>Наша группа в телеграм</span>
-              <TelegramWhiteIcon color="white" />
-            </FooterContactButtonTelegramWhite>
-          </FooterContactWrapper>
+              <span>Написать нам в Whatsapp</span>
+              <WhatsappIcon color="#29A71A" />
+            </FooterContactButtonWhatsapp>
+          </TabletBtnWrapp>
         )}
       </FooterDextopBottom>
-    </FooterDextopContainer>
+      <FooterTabletBotWrapp>
+        <FooterLegalList>
+          <FooterLegalItem>Политика конфиденциальности</FooterLegalItem>
+        </FooterLegalList>
+        <FooterCopyright>
+          © 2025 Affix Global Все права защищены
+        </FooterCopyright>
+      </FooterTabletBotWrapp>
+    </FooterTabletContainer>
   )
 }
 
-export default FooterDextop
+export default FooterTablet

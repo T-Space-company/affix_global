@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 import FooterMobale from './footerMobale/FooterMobale'
 import FooterDextop from './footerDextop/FooterDextop'
 import { FooterWrapper } from './FooterStyled'
+import FooterTablet from './footerTablet/FooterTablet'
 
 const Footer = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1200)
+  const [screenSize, setScreenSize] = useState(window.innerWidth)
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1200)
+      setScreenSize(window.innerWidth)
     }
 
     window.addEventListener('resize', handleResize)
@@ -17,7 +18,13 @@ const Footer = () => {
 
   return (
     <FooterWrapper>
-      {isMobile ? <FooterMobale /> : <FooterDextop />}
+      {screenSize < 600 ? (
+        <FooterMobale />
+      ) : screenSize >= 600 && screenSize < 1200 ? (
+        <FooterTablet />
+      ) : (
+        <FooterDextop />
+      )}
     </FooterWrapper>
   )
 }

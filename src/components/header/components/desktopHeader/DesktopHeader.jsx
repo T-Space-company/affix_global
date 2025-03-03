@@ -19,6 +19,7 @@ const DesktopHeader = () => {
         <DesktopHeaderLink to="/blog">Блог</DesktopHeaderLink>
         <DesktopHeaderLink to="/contact">Контакты</DesktopHeaderLink>
         <DesktopHeaderLink to="/contact">FAQ</DesktopHeaderLink>
+        <DesktopHeaderLink to="/quiz">Quiz</DesktopHeaderLink>
       </DesktopHeaderNaw>
       <DesktopHeaderButton onClick={redirectToContact}>
         Подать заявку сейчас
