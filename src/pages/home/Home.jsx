@@ -14,6 +14,9 @@ import BlogSlider from './components/blogSlider/BlogSlider'
 import SliderReviews from './components/sliderReviews/SliderReviews'
 
 const Home = () => {
+  console.log('====================================')
+  console.log('avto deploi')
+  console.log('====================================')
   return (
     <HomeWrapper>
       <Hero />
