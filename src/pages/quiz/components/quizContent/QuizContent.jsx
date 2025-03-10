@@ -12,6 +12,7 @@ import {
   QuizWrapper,
 } from './QuizContentStyled'
 import QuizAnswer from '../quizAnswer/QuizAnswer'
+import sendQuizResults from './emailService'
 
 const QuizContent = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -38,6 +39,7 @@ const QuizContent = () => {
         setIsAnswered(false)
       } else {
         setQuizCompleted(true)
+        sendQuizResults('00ntech@t-space.io', score, quizData.length)
       }
     }, 1000)
   }
