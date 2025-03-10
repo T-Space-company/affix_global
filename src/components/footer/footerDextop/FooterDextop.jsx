@@ -5,7 +5,6 @@ import {
   FooterContactButtonTelegram,
   FooterContactButtonTelegramWhite,
   FooterContactButtonWhatsapp,
-  FooterContactIcon,
   FooterCopyright,
   FooterLegalItem,
   FooterLegalList,
@@ -25,12 +24,11 @@ import {
   FooterContactWrapperStyleBtn,
 } from './FooterDextopStyled'
 
-import SVGTELEGRAM from '../../../assets/icons/svgTelegram.svg'
-import SVGWhatsapp from '../../../assets/icons/svgWhatsapp.svg'
 import useNavigateToContact from '../../../hooks/useNavigateToContact'
 import TelegramWhiteIcon from '../../../assets/icons/TelegramWhiteIcon'
 import WhatsappIcon from '../../../assets/icons/WhatsappIcon'
 import TelegramIcon from '../../../assets/icons/TelegramIcon'
+import { openTelegram, openWhatsApp } from '../../../hooks/useContactLinks'
 
 const FooterDextop = () => {
   const redirectToContact = useNavigateToContact()
@@ -77,6 +75,7 @@ const FooterDextop = () => {
           <FooterContactWrapper>
             <FooterContactWrapperStyleBtn>
               <FooterContactButtonTelegram
+                onClick={openTelegram}
                 onMouseEnter={(e) =>
                   e.currentTarget
                     .querySelector('svg path')
@@ -92,6 +91,7 @@ const FooterDextop = () => {
                 <TelegramIcon color="#039BE5" />
               </FooterContactButtonTelegram>
               <FooterContactButtonWhatsapp
+                onClick={openWhatsApp}
                 onMouseEnter={(e) =>
                   e.currentTarget
                     .querySelector('svg path')
@@ -109,6 +109,7 @@ const FooterDextop = () => {
             </FooterContactWrapperStyleBtn>
 
             <FooterContactButtonTelegramWhite
+              onClick={openTelegram}
               onMouseEnter={(e) =>
                 e.currentTarget
                   .querySelector('svg path')

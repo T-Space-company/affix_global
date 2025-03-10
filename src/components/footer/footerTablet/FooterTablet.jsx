@@ -5,7 +5,6 @@ import {
   FooterContactButtonTelegram,
   FooterContactButtonTelegramWhite,
   FooterContactButtonWhatsapp,
-  FooterContactIcon,
   FooterCopyright,
   FooterLegalItem,
   FooterLegalList,
@@ -31,6 +30,7 @@ import useNavigateToContact from '../../../hooks/useNavigateToContact'
 import TelegramWhiteIcon from '../../../assets/icons/TelegramWhiteIcon'
 import WhatsappIcon from '../../../assets/icons/WhatsappIcon'
 import TelegramIcon from '../../../assets/icons/TelegramIcon'
+import { openTelegram, openWhatsApp } from '../../../hooks/useContactLinks'
 
 const FooterTablet = () => {
   const redirectToContact = useNavigateToContact()
@@ -71,6 +71,7 @@ const FooterTablet = () => {
             <FooterContactWrapper>
               <FooterContactWrapperStyleBtn>
                 <FooterContactButtonTelegram
+                  onClick={openTelegram}
                   onMouseEnter={(e) =>
                     e.currentTarget
                       .querySelector('svg path')
@@ -88,6 +89,7 @@ const FooterTablet = () => {
               </FooterContactWrapperStyleBtn>
 
               <FooterContactButtonTelegramWhite
+                onClick={openTelegram}
                 onMouseEnter={(e) =>
                   e.currentTarget
                     .querySelector('svg path')
@@ -104,6 +106,7 @@ const FooterTablet = () => {
               </FooterContactButtonTelegramWhite>
             </FooterContactWrapper>
             <FooterContactButtonWhatsapp
+              onClick={openWhatsApp}
               onMouseEnter={(e) =>
                 e.currentTarget
                   .querySelector('svg path')

@@ -27,6 +27,7 @@ import useNavigateToContact from '../../hooks/useNavigateToContact'
 import TelegramWhiteIcon from '../../assets/icons/TelegramWhiteIcon'
 import WhatsappIcon from '../../assets/icons/WhatsappIcon'
 import TelegramIcon from '../../assets/icons/TelegramIcon'
+import { openTelegram, openWhatsApp } from '../../hooks/useContactLinks'
 
 const Contact = () => {
   const redirectToContact = useNavigateToContact()
@@ -44,6 +45,7 @@ const Contact = () => {
             <ContactTitleEmail>GLOBALAFFIX@mail.com</ContactTitleEmail>
             <FooterContacts>
               <FooterContactButtonTelegram
+                onClick={openTelegram}
                 onMouseEnter={(e) =>
                   e.currentTarget
                     .querySelector('svg path')
@@ -59,6 +61,7 @@ const Contact = () => {
                 <TelegramIcon color="#039BE5" />
               </FooterContactButtonTelegram>
               <FooterContactButtonWhatsapp
+                onClick={openWhatsApp}
                 onMouseEnter={(e) =>
                   e.currentTarget
                     .querySelector('svg path')
@@ -75,6 +78,7 @@ const Contact = () => {
               </FooterContactButtonWhatsapp>
 
               <FooterContactButtonTelegramWhite
+                onClick={openTelegram}
                 onMouseEnter={(e) =>
                   e.currentTarget
                     .querySelector('svg path')

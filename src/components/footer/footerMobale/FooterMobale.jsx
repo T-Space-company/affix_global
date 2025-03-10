@@ -1,8 +1,4 @@
 import React from 'react'
-import SVGTELEGRAM from '../../../assets/icons/svgTelegram.svg'
-import SVGWhatsapp from '../../../assets/icons/svgWhatsapp.svg'
-
-import SVGTELEGRAMWHITE from '../../../assets/icons/svgTelegramWhite.svg'
 import Logo from '../../header/components/logo/Logo'
 
 import {
@@ -12,7 +8,6 @@ import {
   FooterNavColumn,
   FooterNavButton,
   FooterContacts,
-  FooterContactIcon,
   FooterLegalList,
   FooterLegalItem,
   FooterCopyright,
@@ -24,6 +19,7 @@ import { useLocation } from 'react-router-dom'
 import TelegramIcon from '../../../assets/icons/TelegramIcon'
 import WhatsappIcon from '../../../assets/icons/WhatsappIcon'
 import TelegramWhiteIcon from '../../../assets/icons/TelegramWhiteIcon'
+import { openTelegram, openWhatsApp } from '../../../hooks/useContactLinks'
 
 const FooterMobale = () => {
   const location = useLocation()
@@ -50,6 +46,7 @@ const FooterMobale = () => {
       {!isContactPage && (
         <FooterContacts>
           <FooterContactButtonTelegram
+            onClick={openTelegram}
             onMouseEnter={(e) =>
               e.currentTarget
                 .querySelector('svg path')
@@ -65,6 +62,7 @@ const FooterMobale = () => {
             <TelegramIcon color="#039BE5" />
           </FooterContactButtonTelegram>
           <FooterContactButtonWhatsapp
+            onClick={openWhatsApp}
             onMouseEnter={(e) =>
               e.currentTarget
                 .querySelector('svg path')
@@ -81,6 +79,7 @@ const FooterMobale = () => {
           </FooterContactButtonWhatsapp>
 
           <FooterContactButtonTelegramWhite
+            onClick={openTelegram}
             onMouseEnter={(e) =>
               e.currentTarget
                 .querySelector('svg path')
@@ -100,9 +99,6 @@ const FooterMobale = () => {
 
       <FooterLegalList>
         <FooterLegalItem>Политика конфиденциальности</FooterLegalItem>
-        {/* <FooterLegalItem>information Legal information Legal</FooterLegalItem>
-        <FooterLegalItem>information Legal information Legal</FooterLegalItem>
-        <FooterLegalItem>information Legal information</FooterLegalItem> */}
       </FooterLegalList>
       <FooterCopyright>© 2025 Affix Global Все права защищены</FooterCopyright>
     </FooterContainer>
