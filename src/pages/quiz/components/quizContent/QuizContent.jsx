@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { quizData } from './quizData'
-
 import {
   AnswerItem,
   AnswersList,
+  FormTitle,
+  FormWrapper,
+  InputField,
   ProgressBar,
   ProgressDot,
   QuestionText,
   QuizTitle,
   QuizWrapper,
+  SubmitButton,
 } from './QuizContentStyled'
 import QuizAnswer from '../quizAnswer/QuizAnswer'
 import sendQuizResults from './emailService'
@@ -21,6 +24,13 @@ const QuizContent = () => {
   const [isAnswered, setIsAnswered] = useState(false)
   const [quizCompleted, setQuizCompleted] = useState(false)
   const [userAnswers, setUserAnswers] = useState([])
+  const [isRegistered, setIsRegistered] = useState(false)
+  const [formData, setFormData] = useState({
+    email: '',
+    name: '',
+    surname: '',
+    phone: '',
+  })
 
   const handleAnswerClick = (index) => {
     if (isAnswered) return
@@ -50,17 +60,26 @@ const QuizContent = () => {
         setIsAnswered(false)
       } else {
         setQuizCompleted(true)
-        sendQuizResults(
-          'тест юзер email',
-          'тест юзер нейм',
-          'тест юзер сюрнейм',
-          'тест телефон',
-          score,
-          quizData.length,
-          userAnswers
-        )
       }
     }, 1000)
+  }
+
+  const handleRegisterChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleRegisterSubmit = (e) => {
+    e.preventDefault()
+    setIsRegistered(true)
+    sendQuizResults(
+      formData.email,
+      formData.name,
+      formData.surname,
+      formData.phone,
+      score,
+      quizData.length,
+      userAnswers
+    )
   }
 
   return (
@@ -69,15 +88,66 @@ const QuizContent = () => {
       <>
         <AnimatePresence mode="wait">
           {quizCompleted ? (
-            <motion.div
-              key="quiz-answer"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              <QuizAnswer score={score} totalQuestions={quizData.length} />
-            </motion.div>
+            !isRegistered ? (
+              <motion.div
+                key="register-form"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.5 }}
+              >
+                <FormTitle>
+                  Оставьте свою заявку для начала сотрудничества
+                </FormTitle>
+                <FormWrapper onSubmit={handleRegisterSubmit}>
+                  <InputField
+                    type="text"
+                    name="name"
+                    placeholder="Имя"
+                    value={formData.name}
+                    onChange={handleRegisterChange}
+                    required
+                  />
+                  <InputField
+                    type="text"
+                    name="surname"
+                    placeholder="Фамилия"
+                    value={formData.surname}
+                    onChange={handleRegisterChange}
+                    required
+                  />
+                  <InputField
+                    type="tel"
+                    name="phone"
+                    placeholder="Телефон"
+                    value={formData.phone}
+                    onChange={handleRegisterChange}
+                    required
+                  />
+                  <InputField
+                    type="email"
+                    name="email"
+                    placeholder="Введите ваш Email"
+                    value={formData.email}
+                    onChange={handleRegisterChange}
+                    required
+                  />
+                  <SubmitButton type="submit">
+                    Завершить регистрацию
+                  </SubmitButton>
+                </FormWrapper>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="quiz-answer"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.5 }}
+              >
+                <QuizAnswer score={score} totalQuestions={quizData.length} />
+              </motion.div>
+            )
           ) : (
             <motion.div
               key={currentQuestion}

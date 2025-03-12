@@ -109,3 +109,72 @@ export const AnswerItem = styled(motion.li)`
     `}
   }
 `
+
+export const FormWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #000;
+  padding: 30px;
+  border-radius: 12px;
+
+  width: 100%;
+  text-align: center;
+
+  @media (max-width: 480px) {
+    padding: 20px;
+  }
+`
+
+export const InputField = styled.input`
+  padding: 14px;
+  background: #1e1e1e;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #fff;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+
+  &:focus {
+    outline: 2px solid #3a3a3a;
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+`
+
+export const SubmitButton = styled.button`
+  padding: 10px;
+  background: #2d74ff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-top: 10px;
+
+  &:hover {
+    background: #255dcc;
+  }
+`
+
+export const PrivacyText = styled.p`
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 10px;
+
+  a {
+    color: #2d74ff;
+    text-decoration: underline;
+  }
+`
+
+export const FormTitle = styled.p`
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+`
