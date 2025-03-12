@@ -64,7 +64,7 @@ export const BlogTitle = styled.h2`
   font-weight: 700;
   line-height: normal;
   margin: 0;
-  max-width: 90%; /* Щоб не займав занадто багато місця */
+  max-width: 100%;
 
   @media (min-width: 768px) {
     font-size: 35px;
