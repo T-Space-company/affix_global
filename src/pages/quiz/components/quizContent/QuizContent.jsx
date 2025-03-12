@@ -20,6 +20,7 @@ const QuizContent = () => {
   const [score, setScore] = useState(0)
   const [isAnswered, setIsAnswered] = useState(false)
   const [quizCompleted, setQuizCompleted] = useState(false)
+  const [userAnswers, setUserAnswers] = useState([])
 
   const handleAnswerClick = (index) => {
     if (isAnswered) return
@@ -27,10 +28,20 @@ const QuizContent = () => {
     setSelectedAnswer(index)
     setIsAnswered(true)
 
-    const isCorrect = index === quizData[currentQuestion].correctAnswerIndex
+    const currentQ = quizData[currentQuestion]
+    const isCorrect = index === currentQ.correctAnswerIndex
     if (isCorrect) {
       setScore((prev) => prev + 1)
     }
+
+    setUserAnswers((prev) => [
+      ...prev,
+      {
+        question: currentQ.question,
+        answer: currentQ.answers[index],
+        result: isCorrect ? 'Да' : 'Нет',
+      },
+    ])
 
     setTimeout(() => {
       if (currentQuestion < quizData.length - 1) {
@@ -39,7 +50,15 @@ const QuizContent = () => {
         setIsAnswered(false)
       } else {
         setQuizCompleted(true)
-        sendQuizResults('00ntech@t-space.io', score, quizData.length)
+        sendQuizResults(
+          'тест юзер email',
+          'тест юзер нейм',
+          'тест юзер сюрнейм',
+          'тест телефон',
+          score,
+          quizData.length,
+          userAnswers
+        )
       }
     }, 1000)
   }
