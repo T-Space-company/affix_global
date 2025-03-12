@@ -13,6 +13,7 @@ import { NavBtnTelegram } from './NavigationModal.styles'
 
 import SVGTELEGRAM from '../../../../assets/icons/svgTelegram.svg'
 import SVGWhatsapp from '../../../../assets/icons/svgWhatsapp.svg'
+import { openTelegramBot } from '../../../../hooks/useContactLinks'
 
 const modalVariants = {
   open: { x: 0 },
@@ -88,7 +89,7 @@ const NavigationModal = ({ isOpen, toggleModal }) => {
                 </NavLinkItem>
               </NavLinks>
               <NavBtnWrapp>
-                <NavBtnTelegram>
+                <NavBtnTelegram onClick={openTelegramBot}>
                   <span>Перейти в наш Telegram Bot</span>
                   <img src={SVGTELEGRAM} />
                 </NavBtnTelegram>

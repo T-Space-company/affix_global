@@ -19,7 +19,11 @@ import { useLocation } from 'react-router-dom'
 import TelegramIcon from '../../../assets/icons/TelegramIcon'
 import WhatsappIcon from '../../../assets/icons/WhatsappIcon'
 import TelegramWhiteIcon from '../../../assets/icons/TelegramWhiteIcon'
-import { openTelegram, openWhatsApp } from '../../../hooks/useContactLinks'
+import {
+  openTelegram,
+  openTelegramBot,
+  openWhatsApp,
+} from '../../../hooks/useContactLinks'
 
 const FooterMobale = () => {
   const location = useLocation()
@@ -46,7 +50,7 @@ const FooterMobale = () => {
       {!isContactPage && (
         <FooterContacts>
           <FooterContactButtonTelegram
-            onClick={openTelegram}
+            onClick={openTelegramBot}
             onMouseEnter={(e) =>
               e.currentTarget
                 .querySelector('svg path')

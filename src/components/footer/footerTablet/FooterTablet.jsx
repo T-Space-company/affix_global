@@ -30,7 +30,11 @@ import useNavigateToContact from '../../../hooks/useNavigateToContact'
 import TelegramWhiteIcon from '../../../assets/icons/TelegramWhiteIcon'
 import WhatsappIcon from '../../../assets/icons/WhatsappIcon'
 import TelegramIcon from '../../../assets/icons/TelegramIcon'
-import { openTelegram, openWhatsApp } from '../../../hooks/useContactLinks'
+import {
+  openTelegram,
+  openTelegramBot,
+  openWhatsApp,
+} from '../../../hooks/useContactLinks'
 
 const FooterTablet = () => {
   const redirectToContact = useNavigateToContact()
@@ -71,7 +75,7 @@ const FooterTablet = () => {
             <FooterContactWrapper>
               <FooterContactWrapperStyleBtn>
                 <FooterContactButtonTelegram
-                  onClick={openTelegram}
+                  onClick={openTelegramBot}
                   onMouseEnter={(e) =>
                     e.currentTarget
                       .querySelector('svg path')
