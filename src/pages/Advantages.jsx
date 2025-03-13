@@ -1,5 +1,5 @@
 const Advantages = () => {
-  return <div>Advantages</div>
+  return <div></div>
 }
 
 export default Advantages

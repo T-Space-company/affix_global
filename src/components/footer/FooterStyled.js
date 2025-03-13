@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { Link } from 'react-router-dom'
 export const FooterWrapper = styled.footer`
   width: 100%;
   display: flex;
@@ -34,7 +34,7 @@ export const FooterNavColumn = styled.div`
   align-items: center;
 `
 
-export const FooterNavButton = styled.button`
+export const FooterNavButton = styled(Link)`
   cursor: pointer;
   background: transparent;
   border: none;

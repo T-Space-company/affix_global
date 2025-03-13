@@ -37,13 +37,13 @@ const FooterMobale = () => {
       </FooterLogo>
       <FooterNav>
         <FooterNavColumn>
-          <FooterNavButton>Про нас</FooterNavButton>
-          <FooterNavButton>Преимущества</FooterNavButton>
+          <FooterNavButton to="/">Про нас</FooterNavButton>
+          <FooterNavButton to="/advantages">Преимущества</FooterNavButton>
         </FooterNavColumn>
         <FooterNavColumn>
-          <FooterNavButton>Блог</FooterNavButton>
-          <FooterNavButton>Контакты</FooterNavButton>
-          <FooterNavButton>FAQ</FooterNavButton>
+          <FooterNavButton to="/blog">Блог</FooterNavButton>
+          <FooterNavButton to="/contact">Контакты</FooterNavButton>
+          <FooterNavButton to="/faq">FAQ</FooterNavButton>
         </FooterNavColumn>
       </FooterNav>
 

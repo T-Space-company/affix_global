@@ -54,11 +54,11 @@ const FooterTablet = () => {
 
       <FooterDextopBottom>
         <FooterNavList>
-          <FooterNavButton>Про нас</FooterNavButton>
-          <FooterNavButton>Преимущества</FooterNavButton>
-          <FooterNavButton>Блог</FooterNavButton>
-          <FooterNavButton>Контакты</FooterNavButton>
-          <FooterNavButton>FAQ</FooterNavButton>
+          <FooterNavButton to="/">Про нас</FooterNavButton>
+          <FooterNavButton to="/advantages">Преимущества</FooterNavButton>
+          <FooterNavButton to="/blog">Блог</FooterNavButton>
+          <FooterNavButton to="/contact">Контакты</FooterNavButton>
+          <FooterNavButton to="/faq">FAQ</FooterNavButton>
         </FooterNavList>
 
         {!isContactPage && (
