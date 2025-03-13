@@ -90,41 +90,59 @@ const FooterTablet = () => {
                   <span>Перейти в наш Telegram Bot</span>
                   <TelegramIcon color="#039BE5" />
                 </FooterContactButtonTelegram>
+                <FooterContactButtonTelegramWhite
+                  onClick={openTelegram}
+                  onMouseEnter={(e) =>
+                    e.currentTarget
+                      .querySelector('svg path')
+                      .setAttribute('fill', 'black')
+                  }
+                  onMouseLeave={(e) =>
+                    e.currentTarget
+                      .querySelector('svg path')
+                      .setAttribute('fill', 'white')
+                  }
+                >
+                  <span>Наша группа в телеграм</span>
+                  <TelegramWhiteIcon color="white" />
+                </FooterContactButtonTelegramWhite>
               </FooterContactWrapperStyleBtn>
-
-              <FooterContactButtonTelegramWhite
-                onClick={openTelegram}
-                onMouseEnter={(e) =>
-                  e.currentTarget
-                    .querySelector('svg path')
-                    .setAttribute('fill', 'black')
-                }
-                onMouseLeave={(e) =>
-                  e.currentTarget
-                    .querySelector('svg path')
-                    .setAttribute('fill', 'white')
-                }
-              >
-                <span>Наша группа в телеграм</span>
-                <TelegramWhiteIcon color="white" />
-              </FooterContactButtonTelegramWhite>
+              <FooterContactWrapperStyleBtn>
+                {' '}
+                <FooterContactButtonTelegram
+                  onClick={openTelegram}
+                  onMouseEnter={(e) =>
+                    e.currentTarget
+                      .querySelector('svg path')
+                      .setAttribute('fill', 'white')
+                  }
+                  onMouseLeave={(e) =>
+                    e.currentTarget
+                      .querySelector('svg path')
+                      .setAttribute('fill', '#039BE5')
+                  }
+                >
+                  <span>Написать нам в Telegram</span>
+                  <TelegramIcon color="#039BE5" />
+                </FooterContactButtonTelegram>
+                <FooterContactButtonWhatsapp
+                  onClick={openWhatsApp}
+                  onMouseEnter={(e) =>
+                    e.currentTarget
+                      .querySelector('svg path')
+                      .setAttribute('fill', 'white')
+                  }
+                  onMouseLeave={(e) =>
+                    e.currentTarget
+                      .querySelector('svg path')
+                      .setAttribute('fill', '#29A71A')
+                  }
+                >
+                  <span>Написать нам в Whatsapp</span>
+                  <WhatsappIcon color="#29A71A" />
+                </FooterContactButtonWhatsapp>
+              </FooterContactWrapperStyleBtn>
             </FooterContactWrapper>
-            <FooterContactButtonWhatsapp
-              onClick={openWhatsApp}
-              onMouseEnter={(e) =>
-                e.currentTarget
-                  .querySelector('svg path')
-                  .setAttribute('fill', 'white')
-              }
-              onMouseLeave={(e) =>
-                e.currentTarget
-                  .querySelector('svg path')
-                  .setAttribute('fill', '#29A71A')
-              }
-            >
-              <span>Написать нам в Whatsapp</span>
-              <WhatsappIcon color="#29A71A" />
-            </FooterContactButtonWhatsapp>
           </TabletBtnWrapp>
         )}
       </FooterDextopBottom>

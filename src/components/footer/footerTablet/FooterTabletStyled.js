@@ -118,5 +118,6 @@ export const FooterSubmitButton = styled.button`
 export const FooterContactWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-right: 50px;
+  padding-right: 20px;
+  gap: 30px;
 `

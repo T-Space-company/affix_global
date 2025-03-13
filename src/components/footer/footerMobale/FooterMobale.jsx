@@ -65,6 +65,22 @@ const FooterMobale = () => {
             <span>Перейти в наш Telegram Bot</span>
             <TelegramIcon color="#039BE5" />
           </FooterContactButtonTelegram>
+          <FooterContactButtonTelegram
+            onClick={openTelegram}
+            onMouseEnter={(e) =>
+              e.currentTarget
+                .querySelector('svg path')
+                .setAttribute('fill', 'white')
+            }
+            onMouseLeave={(e) =>
+              e.currentTarget
+                .querySelector('svg path')
+                .setAttribute('fill', '#039BE5')
+            }
+          >
+            <span>Написать нам в Telegram</span>
+            <TelegramIcon color="#039BE5" />
+          </FooterContactButtonTelegram>
           <FooterContactButtonWhatsapp
             onClick={openWhatsApp}
             onMouseEnter={(e) =>
