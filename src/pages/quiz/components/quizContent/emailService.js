@@ -37,6 +37,7 @@ const sendQuizResults = async (
     templateParams[`question${index + 1}`] = answer.question || 'тест'
     templateParams[`ansver${index + 1}`] = answer.answer || 'тест'
     templateParams[`resault${index + 1}`] = answer.result || 'тест'
+    templateParams[`correctAnswer${index + 1}`] = answer.correctAnswer || 'тест'
   })
 
   try {

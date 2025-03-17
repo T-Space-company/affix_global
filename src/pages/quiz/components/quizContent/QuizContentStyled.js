@@ -83,7 +83,7 @@ export const AnswersList = styled.ul`
 export const AnswerItem = styled(motion.li)`
   overflow: hidden;
   text-align: center;
-  padding: 15px 30px;
+  padding: 15px 15px;
   display: flex;
   align-items: center;
   justify-content: center;

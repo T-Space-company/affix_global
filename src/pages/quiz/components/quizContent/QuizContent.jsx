@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { quizData } from './quizData'
 import {
@@ -17,14 +17,27 @@ import {
 import QuizAnswer from '../quizAnswer/QuizAnswer'
 import sendQuizResults from './emailService'
 
+const LOCAL_STORAGE_KEY = 'quizProgress'
+
 const QuizContent = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const savedProgress =
+    JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || {}
+
+  const [currentQuestion, setCurrentQuestion] = useState(
+    savedProgress.currentQuestion || 0
+  )
   const [selectedAnswer, setSelectedAnswer] = useState(null)
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState(savedProgress.score || 0)
   const [isAnswered, setIsAnswered] = useState(false)
-  const [quizCompleted, setQuizCompleted] = useState(false)
-  const [userAnswers, setUserAnswers] = useState([])
-  const [isRegistered, setIsRegistered] = useState(false)
+  const [quizCompleted, setQuizCompleted] = useState(
+    savedProgress.quizCompleted || false
+  )
+  const [userAnswers, setUserAnswers] = useState(
+    savedProgress.userAnswers || []
+  )
+  const [isRegistered, setIsRegistered] = useState(
+    savedProgress.isRegistered || false
+  )
   const [formData, setFormData] = useState({
     email: '',
     name: '',
@@ -32,8 +45,21 @@ const QuizContent = () => {
     phone: '',
   })
 
+  useEffect(() => {
+    localStorage.setItem(
+      LOCAL_STORAGE_KEY,
+      JSON.stringify({
+        currentQuestion,
+        score,
+        quizCompleted,
+        userAnswers,
+        isRegistered,
+      })
+    )
+  }, [currentQuestion, score, quizCompleted, userAnswers, isRegistered])
+
   const handleAnswerClick = (index) => {
-    if (isAnswered) return
+    if (isAnswered || userAnswers[currentQuestion]) return
 
     setSelectedAnswer(index)
     setIsAnswered(true)
@@ -44,14 +70,16 @@ const QuizContent = () => {
       setScore((prev) => prev + 1)
     }
 
-    setUserAnswers((prev) => [
-      ...prev,
+    const updatedAnswers = [
+      ...userAnswers,
       {
         question: currentQ.question,
         answer: currentQ.answers[index],
+        correctAnswer: currentQ.answers[currentQ.correctAnswerIndex],
         result: isCorrect ? 'Да' : 'Нет',
       },
-    ])
+    ]
+    setUserAnswers(updatedAnswers)
 
     setTimeout(() => {
       if (currentQuestion < quizData.length - 1) {
@@ -174,7 +202,7 @@ const QuizContent = () => {
                     isCorrect={
                       index === quizData[currentQuestion].correctAnswerIndex
                     }
-                    isAnswered={isAnswered && selectedAnswer !== index}
+                    isAnswered={isAnswered || userAnswers[currentQuestion]}
                   >
                     {answer}
                   </AnswerItem>
