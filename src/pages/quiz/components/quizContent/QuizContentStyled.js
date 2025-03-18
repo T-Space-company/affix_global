@@ -88,13 +88,10 @@ export const AnswerItem = styled(motion.li)`
   align-items: center;
   justify-content: center;
   border-radius: 30px;
-  border: 2px solid
-    ${({ isSelected, isCorrect }) =>
-      isSelected ? (isCorrect ? '#00C851' : '#ff4444') : '#fff'};
+  border: 2px solid ${({ isSelected }) => (isSelected ? '#fff' : '#fff')};
   cursor: ${({ isAnswered }) => (isAnswered ? 'default' : 'pointer')};
   color: #fff;
-  background: ${({ isSelected, isCorrect }) =>
-    isSelected ? (isCorrect ? '#00C851' : '#ff4444') : 'transparent'};
+  background: ${({ isSelected }) => (isSelected ? '#444' : 'transparent')};
   transition: all 0.3s ease-in-out;
   opacity: ${({ isAnswered, isSelected }) =>
     isAnswered && !isSelected ? 0.5 : 1};
