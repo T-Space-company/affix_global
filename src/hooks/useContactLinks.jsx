@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '+79292170932'
+const WHATSAPP_NUMBER = '+79499443052'
 const TELEGRAM_GROUP = 'https://t.me/+baCOuD6UZOtkYWYy'
 const TELEGRAM_BOT = 'https://t.me/GlobalAffiX_Bot'
 
