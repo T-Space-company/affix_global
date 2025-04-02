@@ -60,7 +60,7 @@ const FooterDextop = () => {
       <FooterDextopBottom>
         <FooterNavList>
           <FooterNavButton to="/">Про нас</FooterNavButton>
-          <FooterNavButton to="/advantages">Преимущества</FooterNavButton>
+          {/* <FooterNavButton to="/advantages">Преимущества</FooterNavButton> */}
           <FooterNavButton to="/blog">Блог</FooterNavButton>
           <FooterNavButton to="/contact">Контакты</FooterNavButton>
           <FooterNavButton to="/faq">FAQ</FooterNavButton>

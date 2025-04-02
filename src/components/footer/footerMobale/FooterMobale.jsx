@@ -38,7 +38,7 @@ const FooterMobale = () => {
       <FooterNav>
         <FooterNavColumn>
           <FooterNavButton to="/">Про нас</FooterNavButton>
-          <FooterNavButton to="/advantages">Преимущества</FooterNavButton>
+          {/* <FooterNavButton to="/advantages">Преимущества</FooterNavButton> */}
         </FooterNavColumn>
         <FooterNavColumn>
           <FooterNavButton to="/blog">Блог</FooterNavButton>

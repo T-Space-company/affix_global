@@ -72,9 +72,9 @@ const NavigationModal = ({ isOpen, toggleModal }) => {
                 <NavLinkItem to="/" onClick={toggleModal}>
                   Про нас
                 </NavLinkItem>
-                <NavLinkItem to="/advantages" onClick={toggleModal}>
+                {/* <NavLinkItem to="/advantages" onClick={toggleModal}>
                   Преимущества
-                </NavLinkItem>
+                </NavLinkItem> */}
                 <NavLinkItem to="/contact" onClick={toggleModal}>
                   Контакты
                 </NavLinkItem>

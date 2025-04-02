@@ -29,14 +29,14 @@ function App() {
                 </Suspense>
               }
             />
-            <Route
+            {/* <Route
               path="/advantages"
               element={
                 <Suspense fallback={<Loading />}>
                   <Advantages />
                 </Suspense>
               }
-            />
+            /> */}
             <Route
               path="/contact"
               element={

@@ -15,7 +15,7 @@ const DesktopHeader = () => {
       <Logo />
       <DesktopHeaderNaw>
         <DesktopHeaderLink to="/">Про нас</DesktopHeaderLink>
-        <DesktopHeaderLink to="/advantages">Преимущества</DesktopHeaderLink>
+        {/* <DesktopHeaderLink to="/advantages">Преимущества</DesktopHeaderLink> */}
         <DesktopHeaderLink to="/blog">Блог</DesktopHeaderLink>
         <DesktopHeaderLink to="/contact">Контакты</DesktopHeaderLink>
         <DesktopHeaderLink to="/contact">FAQ</DesktopHeaderLink>
