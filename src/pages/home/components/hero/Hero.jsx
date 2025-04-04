@@ -38,15 +38,15 @@ const Hero = () => {
         <HeroWrapperBottom>
           <HeroBotomElLine>
             <HeroBotomElTitle>1 200+</HeroBotomElTitle>
-            <HeroBotomElText>Партнеры</HeroBotomElText>
+            <HeroBotomElText>партнеров</HeroBotomElText>
           </HeroBotomElLine>
           <HeroBotomElLine>
-            <HeroBotomElTitle>1 200+</HeroBotomElTitle>
-            <HeroBotomElText>Партнеры</HeroBotomElText>
+            <HeroBotomElTitle>600+</HeroBotomElTitle>
+            <HeroBotomElText>inhouse офферов</HeroBotomElText>
           </HeroBotomElLine>
           <HeroBotomEl>
-            <HeroBotomElTitle>1 200+</HeroBotomElTitle>
-            <HeroBotomElText>Партнеры</HeroBotomElText>
+            <HeroBotomElTitle>45%+</HeroBotomElTitle>
+            <HeroBotomElText>выплата</HeroBotomElText>
           </HeroBotomEl>
         </HeroWrapperBottom>
       </ContainerPading>

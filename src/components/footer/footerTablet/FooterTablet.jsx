@@ -58,7 +58,7 @@ const FooterTablet = () => {
           {/* <FooterNavButton to="/advantages">Преимущества</FooterNavButton> */}
           <FooterNavButton to="/blog">Блог</FooterNavButton>
           <FooterNavButton to="/contact">Контакты</FooterNavButton>
-          <FooterNavButton to="/faq">FAQ</FooterNavButton>
+          <FooterNavButton to="/contact">FAQ</FooterNavButton>
         </FooterNavList>
 
         {!isContactPage && (
