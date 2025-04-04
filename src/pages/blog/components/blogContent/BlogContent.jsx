@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import { blogPosts } from './BlogContentCard'
 
 export const BlogList = styled.ul`
   display: flex;
@@ -111,20 +113,40 @@ export const ReadMoreButton = styled.button`
   }
 `
 
-import { blogPosts } from './BlogContentCard'
-
 const BlogContent = () => {
   const [expandedIndex, setExpandedIndex] = useState(null)
+  const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
+  const itemRefs = useRef([])
 
   const toggleExpand = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index)
   }
+
+  useEffect(() => {
+    const idFromUrl = searchParams.get('id')
+    if (idFromUrl) {
+      const index = blogPosts.findIndex((post) => String(post.id) === idFromUrl)
+      if (index !== -1) {
+        setExpandedIndex(index)
+        setTimeout(() => {
+          itemRefs.current[index]?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          })
+        }, 300)
+
+        navigate('/blog', { replace: true })
+      }
+    }
+  }, [])
 
   return (
     <BlogList>
       {blogPosts.map((post, index) => (
         <motion.li
           key={post.id}
+          ref={(el) => (itemRefs.current[index] = el)}
           layout
           initial={{ borderRadius: 10 }}
           animate={{ borderRadius: expandedIndex === index ? 20 : 10 }}
@@ -149,9 +171,11 @@ const BlogContent = () => {
                     .map((paragraph, i) => <p key={i}>{paragraph}</p>)
                 : post.text}
             </BlogText>
+
             <BlogMeta>
               {post.author} • {post.date}
             </BlogMeta>
+
             <ReadMoreButton onClick={() => toggleExpand(index)}>
               {expandedIndex === index ? 'Скрыть' : 'Читать далее'}
             </ReadMoreButton>

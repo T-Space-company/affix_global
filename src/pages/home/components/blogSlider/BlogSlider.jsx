@@ -8,9 +8,12 @@ import Img1 from '../../../../assets/images/BlogSlider1.png'
 import Img2 from '../../../../assets/images/BlogSlider2.png'
 import Img3 from '../../../../assets/images/BlogSlider3.png'
 import Img4 from '../../../../assets/images/BlogSlider4.png'
+import Img5 from '../../../../assets/images/BlogSlider5.png'
 
 import NextSVG from '../../../../assets/icons/next.svg'
 import PrevSVG from '../../../../assets/icons/prev.svg'
+import { blogPosts } from '../../../blog/components/blogContent/BlogContentCard'
+import { useNavigate } from 'react-router-dom'
 
 const SliderWrapper = styled.div`
   position: relative;
@@ -123,20 +126,10 @@ const ArrowButton = styled.button`
   }
 `
 
-const blogPosts = [
-  { title: 'Тренды Front-end, которые будут с нами в 2025 году', img: Img1 },
-  { title: 'Как криптовалюта изменит финансовый рынок', img: Img2 },
-  { title: 'Лучшие способы инвестирования в 2025', img: Img3 },
-  { title: 'Блокчейн технологии: что нужно знать?', img: Img4 },
-  { title: 'Тренды Front-end, которые будут с нами в 2025 году', img: Img1 },
-  { title: 'Как криптовалюта изменит финансовый рынок', img: Img2 },
-  { title: 'Лучшие способы инвестирования в 2025', img: Img3 },
-  { title: 'Блокчейн технологии: что нужно знать?', img: Img4 },
-]
-
 const BlogSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const sliderRef = useRef(null)
+  const navigate = useNavigate()
 
   const settings = {
     dots: false,
@@ -188,21 +181,24 @@ const BlogSlider = () => {
         className="prev"
         onClick={() => sliderRef.current.slickPrev()}
       >
-        <img src={PrevSVG} alt="" />
+        <img src={PrevSVG} alt="Previous" />
       </ArrowButton>
       <ArrowButton
         className="next"
         onClick={() => sliderRef.current.slickNext()}
       >
-        <img src={NextSVG} alt="" />
+        <img src={NextSVG} alt="Next" />
       </ArrowButton>
 
       <Slider ref={sliderRef} {...settings}>
         {blogPosts.map((post, index) => (
           <BlogCardWrapper key={index}>
-            <BlogCard>
+            <BlogCard
+              onClick={() => navigate(`/blog?id=${post.id}`)}
+              style={{ cursor: 'pointer' }}
+            >
               <ImgWrapper>
-                <ImgEl src={post.img} />
+                <ImgEl src={post.image} alt={post.title} />
               </ImgWrapper>
               <BlogTitle>{post.title}</BlogTitle>
             </BlogCard>
