@@ -22,6 +22,7 @@ import TelegramWhiteIcon from '../../../assets/icons/TelegramWhiteIcon'
 import {
   openTelegram,
   openTelegramBot,
+  openTelegramMSG,
   openWhatsApp,
 } from '../../../hooks/useContactLinks'
 
@@ -66,7 +67,7 @@ const FooterMobale = () => {
             <TelegramIcon color="#039BE5" />
           </FooterContactButtonTelegram>
           <FooterContactButtonTelegram
-            onClick={openTelegram}
+            onClick={openTelegramMSG}
             onMouseEnter={(e) =>
               e.currentTarget
                 .querySelector('svg path')
