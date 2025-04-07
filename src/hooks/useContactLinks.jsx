@@ -1,5 +1,6 @@
 const WHATSAPP_NUMBER = '+79499443052'
-const TELEGRAM_GROUP = 'https://t.me/+baCOuD6UZOtkYWYy'
+const TELEGRAM_GROUP = 'https://t.me/+aXxDYEcr8qk0MTU6'
+const TELEGRAM_MSG = 'https://t.me/ekaterinaglobalaffixhr'
 const TELEGRAM_BOT = 'https://t.me/GlobalAffiX_Bot'
 
 export const openWhatsApp = () => {
@@ -9,6 +10,10 @@ export const openWhatsApp = () => {
 
 export const openTelegram = () => {
   window.open(TELEGRAM_GROUP, '_blank')
+}
+
+export const openTelegramMSG = () => {
+  window.open(TELEGRAM_MSG, '_blank')
 }
 
 export const openTelegramBot = () => {

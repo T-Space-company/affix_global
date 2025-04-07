@@ -33,6 +33,7 @@ import TelegramIcon from '../../../assets/icons/TelegramIcon'
 import {
   openTelegram,
   openTelegramBot,
+  openTelegramMSG,
   openWhatsApp,
 } from '../../../hooks/useContactLinks'
 
@@ -110,7 +111,7 @@ const FooterTablet = () => {
               <FooterContactWrapperStyleBtn>
                 {' '}
                 <FooterContactButtonTelegram
-                  onClick={openTelegram}
+                  onClick={openTelegramMSG}
                   onMouseEnter={(e) =>
                     e.currentTarget
                       .querySelector('svg path')
