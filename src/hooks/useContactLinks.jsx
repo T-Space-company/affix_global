@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '+79499443052'
+const WHATSAPP_NUMBER = '+79998556407'
 const TELEGRAM_GROUP = 'https://t.me/+aXxDYEcr8qk0MTU6'
 const TELEGRAM_MSG = 'https://t.me/ekaterinaglobalaffixhr'
 const TELEGRAM_BOT = 'https://t.me/GlobalAffiX_Bot'
